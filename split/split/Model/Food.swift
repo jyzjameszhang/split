@@ -6,3 +6,27 @@
 //
 
 import Foundation
+
+class Food {
+    let name : String
+    let price : Double
+    var splitCount : Int
+    
+    init (itemName: String, itemPrice: Double) {
+        name = itemName
+        price = itemPrice
+        splitCount = 0
+    }
+    
+    func getPrice() -> Double {
+        return price
+    }
+    
+    func getName() -> String {
+        return name
+    }
+    
+    func getCount() -> Int {
+        return splitCount
+    }
+}
