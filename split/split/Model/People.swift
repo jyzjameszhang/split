@@ -22,7 +22,7 @@ class People {
     func addFood(newItem: Food) {
         var foodPrice : Double;
         foodPrice = newItem.getPrice() * (1 / Double(newItem.getCount()))
-        pay += foodPrice
+        pay += foodPricex
     }
     
     func getPay() -> Double {
