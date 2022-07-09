@@ -20,7 +20,7 @@ class ViewController: UIViewController {
 
     @IBAction func didTapButton(){
         let picker = UIImagePickerController()
-        picker.sourceType = .camera
+        picker.sourceType = .photoLibrary
         picker.delegate = self
         present(picker, animated:true)
     }
