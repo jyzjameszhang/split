@@ -50,9 +50,10 @@ extension ViewController: UIImagePickerControllerDelegate,
                 "recognizer"    : "auto",
             ]
             let boundary = generateBoundaryString()
-            request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+            let imgKey = "name"
             let apiURL = URL(string:"https://ocr.asprise.com/api/v1/receipt")
             let request = NSMutableURLRequest(url:apiURL! as URL)
+            request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
             request.httpMethod = "POST"
             request.httpBody = createBodyWithParameters(parameters: param, filePathKey: "file", imageDataKey: imageData! as NSData, boundary: boundary, imgKey: imgKey) as Data
             let task = URLSession.shared.dataTask(with: request as URLRequest) {

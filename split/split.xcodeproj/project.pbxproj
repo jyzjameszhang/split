@@ -72,7 +72,6 @@
 		15FCA18C28793EBA0077C2AA /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
-				2408C91E287932F10068BB58 /* Info.plist */,
 				2408C91B287932F10068BB58 /* LaunchScreen.storyboard */,
 			);
 			path = Supporting;
@@ -97,6 +96,7 @@
 		2408C90F287932F00068BB58 /* split */ = {
 			isa = PBXGroup;
 			children = (
+				2408C91E287932F10068BB58 /* Info.plist */,
 				15FCA18928793E8B0077C2AA /* Model */,
 				15FCA18A28793E960077C2AA /* Controller */,
 				15FCA18C28793EBA0077C2AA /* Supporting */,
