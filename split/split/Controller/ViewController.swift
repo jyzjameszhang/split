@@ -128,7 +128,12 @@ extension ViewController: UIImagePickerControllerDelegate,
                 //print("response = \(response!)")
                 // print reponse body
                 let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-                let json = try? JSONSerialization.jsonObject(with: data, options: [])
+                let jsonObj = try? JSONSerialization.jsonObject(with: data, options: [])
+                let jsonTest = parseJSON(jsonObj)
+                for x in jsonTest.keys {
+                    print(x)
+                    print(jsonTest[x]!)
+                }
                 print("response data = \(responseString!)")
 
             }
