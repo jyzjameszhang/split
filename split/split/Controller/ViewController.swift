@@ -109,14 +109,18 @@ extension ViewController: UIImagePickerControllerDelegate,
                 //print("response = \(response!)")
                 // print reponse body
                 //let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-                //let jsonObj = try? JSONSerialization.jsonObject(with: data!, options: [])
-                var result : Result
+            let jsonObj = try? JSONSerialization.jsonObject(with: data!, options: [])
+              var result : Result
                 var toReturn : [String:Double] = [:]
                 do {
                     result = try JSONDecoder().decode(Result.self, from: data!)
                     for i in result.receipts {
                         for j in i.items {
-                            toReturn[j.description] = j.amount
+                            var amt:Double = j.amount
+                            if let qty = j.qty {
+                                amt = qty * j.amount
+                            }
+                            toReturn[j.description] = amt
                         }
                     }
                 }
@@ -130,17 +134,18 @@ extension ViewController: UIImagePickerControllerDelegate,
                 struct Result : Codable {
                     var receipts: [Receipt]
                 }
-                
+
                 struct Receipt: Codable {
                     var items: [Item]
                 }
-                
+
                 struct Item: Codable {
                     var amount: Double
                     var description: String
+                    var qty: Double?
                 }
                 //print("response data = \(responseString!)")
-
+                print("reached end!")
             }
 
         task.resume()
