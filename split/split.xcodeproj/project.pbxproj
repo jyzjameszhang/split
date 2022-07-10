@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1544FA98287AB18200A30DC9 /* enterPeopleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1544FA97287AB18200A30DC9 /* enterPeopleController.swift */; };
+		1544FA9A287AB9C900A30DC9 /* foodListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1544FA99287AB9C900A30DC9 /* foodListController.swift */; };
 		15FCA18E28793F610077C2AA /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FCA18D28793F610077C2AA /* Food.swift */; };
 		15FCA19028793F6B0077C2AA /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FCA18F28793F6B0077C2AA /* People.swift */; };
 		2408C911287932F00068BB58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2408C910287932F00068BB58 /* AppDelegate.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		1544FA97287AB18200A30DC9 /* enterPeopleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enterPeopleController.swift; sourceTree = "<group>"; };
+		1544FA99287AB9C900A30DC9 /* foodListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foodListController.swift; sourceTree = "<group>"; };
 		15FCA18D28793F610077C2AA /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		15FCA18F28793F6B0077C2AA /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 		2408C90D287932F00068BB58 /* split.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = split.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +63,7 @@
 				2408C910287932F00068BB58 /* AppDelegate.swift */,
 				2408C914287932F00068BB58 /* ViewController.swift */,
 				1544FA97287AB18200A30DC9 /* enterPeopleController.swift */,
+				1544FA99287AB9C900A30DC9 /* foodListController.swift */,
 				2408C928287A82AE0068BB58 /* data.json */,
 			);
 			path = Controller;
@@ -184,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2408C915287932F00068BB58 /* ViewController.swift in Sources */,
+				1544FA9A287AB9C900A30DC9 /* foodListController.swift in Sources */,
 				1544FA98287AB18200A30DC9 /* enterPeopleController.swift in Sources */,
 				15FCA18E28793F610077C2AA /* Food.swift in Sources */,
 				2408C911287932F00068BB58 /* AppDelegate.swift in Sources */,

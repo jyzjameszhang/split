@@ -92,7 +92,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="NEXT"/>
                                 <connections>
-                                    <segue destination="EIm-EB-4SA" kind="presentation" modalPresentationStyle="fullScreen" id="dUy-vv-hJq"/>
+                                    <segue destination="EIm-EB-4SA" kind="presentation" modalPresentationStyle="fullScreen" id="mDl-n6-xXK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKd-0n-vpL">
@@ -134,10 +134,10 @@
             </objects>
             <point key="canvasLocation" x="2642.0289855072465" y="83.705357142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--foodList-->
         <scene sceneID="V1b-7G-O63">
             <objects>
-                <viewController id="EIm-EB-4SA" sceneMemberID="viewController">
+                <viewController title="foodList" id="EIm-EB-4SA" customClass="foodListController" customModule="split" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cng-fk-5EA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
