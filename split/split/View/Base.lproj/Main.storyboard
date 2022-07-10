@@ -29,10 +29,20 @@
                                 <rect key="frame" x="51" y="148" width="312" height="166"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GtZ-AL-NP5">
+                                <rect key="frame" x="285" y="797" width="88" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="NEXT"/>
+                                <connections>
+                                    <segue destination="Rom-71-WO3" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="yeo-Uk-2hO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="CUD-jY-Uht"/>
                     <connections>
                         <outlet property="button" destination="saV-mR-UPI" id="fwo-Zh-TsA"/>
                         <outlet property="imageView" destination="Atg-sM-jZD" id="f31-vt-jzy"/>
@@ -40,7 +50,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="84.375"/>
+            <point key="canvasLocation" x="1839.1304347826087" y="84.375"/>
+        </scene>
+        <!--enterPeople-->
+        <scene sceneID="7jP-S1-2T2">
+            <objects>
+                <viewController restorationIdentifier="enterPeopleControllerVC" storyboardIdentifier="enterPeopleControllerVC" title="enterPeople" modalTransitionStyle="crossDissolve" id="Rom-71-WO3" customClass="enterPeople" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nHp-b5-vhF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoX-wa-iRf">
+                                <rect key="frame" x="186" y="364" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dvy-hf-Rct">
+                                <rect key="frame" x="20" y="38" width="66" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="XRV-oC-T5g"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="593-Lu-RD5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yCM-Uz-iiL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Vz-Dj-008" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2642.0289855072465" y="83.705357142857139"/>
         </scene>
     </scenes>
     <resources>
