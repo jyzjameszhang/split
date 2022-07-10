@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         button.backgroundColor = .systemGreen
-        button.setTitle("Take picture of receipt", for: .normal)
+        button.setTitle("Camera", for: .normal)
         button.setTitleColor(.white, for: .normal)
         //let arrPrices = parseJSON(filenname: "data")
     }
