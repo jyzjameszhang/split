@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  split
 //
-//  Created by James Zhang on 7/8/22.
+//  Created on 7/8/22.
 //
 
 import UIKit
@@ -16,6 +16,11 @@ class ViewController: UIViewController {
         button.backgroundColor = .systemGreen
         button.setTitle("Take picture of receipt", for: .normal)
         button.setTitleColor(.white, for: .normal)
+        let arrPrices = loadJSON(filenname: "data")
+        for x in arrPrices.keys {
+            print(x)
+            print(arrPrices[x]!)
+        }
     }
 
     @IBAction func didTapButton(){
@@ -24,7 +29,42 @@ class ViewController: UIViewController {
         picker.delegate = self
         present(picker, animated:true)
     }
-
+    
+    func loadJSON(filenname file: String) -> [String:Double] {
+        guard let path = Bundle.main.path(forResource: file, ofType: "json") else {
+            return [:]
+        }
+        let url = URL(fileURLWithPath: path)
+        var result : Result
+        var toReturn : [String:Double] = [:]
+        do {
+            let jsonData = try Data(contentsOf: url)
+            result = try JSONDecoder().decode(Result.self, from: jsonData)
+            for i in result.receipts {
+                for j in i.items {
+                    toReturn[j.description] = j.amount
+                }
+            }
+            return toReturn
+        }
+        catch {
+            print("error")
+        }
+        return [:]
+    }
+    
+    struct Result : Codable {
+        var receipts: [Receipt]
+    }
+    
+    struct Receipt: Codable {
+        var items: [Item]
+    }
+    
+    struct Item: Codable {
+        var amount: Double
+        var description: String
+    }
 }
 
 
