@@ -6,15 +6,13 @@
 //
 import Foundation
 
-class People {
+class Person {
     let name : String
-    let venmo : String
     var pay : Double
     var foodList : [Food]
     
-    init (personName: String, venmoAt: String) {
+    init (personName: String) {
         name = personName
-        venmo = venmoAt
         pay = 0
         foodList = []
     }

@@ -8,36 +8,16 @@
 import UIKit
 
 class enterPeopleController: UIViewController {
-
+    @IBOutlet weak var displayNames: UITextView!
+    @IBOutlet weak var errorMessage: UILabel!
+    @IBOutlet weak var enterNames: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
-    
-    @IBOutlet weak var enterNames: UITextField!
-    @IBOutlet weak var displayNames: UITextView!
-    @IBOutlet weak var errorMessage: UILabel!
-    
-    
-    @IBAction func addPerson(_ sender: UIButton) {
-        if (enterNames.text == "") {
-            var errorEmptyName : String
-            errorEmptyName = "Please Enter A Name"
-            errorMessage.text = errorEmptyName
-        }
-        else {
-            if (errorMessage.text != "") {
-                errorMessage.text = ""
-            }
-            var tempText : String
-            tempText = enterNames.text!
-            tempText += "\n"
-            enterNames.text = ""
-            displayNames.text += tempText
-        }
-    }
+
     
     /*
     // MARK: - Navigation
@@ -49,4 +29,23 @@ class enterPeopleController: UIViewController {
     }
     */
 
+    @IBAction func addPerson(_ sender: UIButton) {
+        if (enterNames.text == "") {
+            var errorEmptyName : String
+            errorEmptyName = "Please Enter A Name"
+            errorMessage.text = errorEmptyName
+        }
+        else {
+            if (errorMessage.text != "") {
+                errorMessage.text = ""
+            }
+            personArr.append(Person(personName: enterNames.text!))
+            //append to person array with name
+            var tempText : String
+            tempText = enterNames.text!
+            tempText += "\n"
+            enterNames.text! = ""
+            displayNames.text! += tempText
+        }
+    }
 }
