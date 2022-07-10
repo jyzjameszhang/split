@@ -53,6 +53,26 @@ class ViewController: UIViewController {
         return [:]
     }
     
+    func parseJSON(jsonPassed jsonObject) -> [String:Double] {
+        var result : Result
+        var toReturn : [String:Double] = [:]
+        do {
+            let jsonData = try Data(jsonPassed)
+            result = try JSONDecoder().decode(Result.self, from: jsonData)
+            for i in result.receipts {
+                for j in i.items {
+                    toReturn[j.description] = j.amount
+                }
+            }
+            return toReturn
+        }
+        catch {
+            print("error")
+        }
+        return [:]
+    }
+
+    
     struct Result : Codable {
         var receipts: [Receipt]
     }
@@ -102,13 +122,13 @@ extension ViewController: UIImagePickerControllerDelegate,
                 if error != nil {
                     print("error=\(error!)")
                     return
-                }
+                }   
 
                 //print response
                 //print("response = \(response!)")
-
                 // print reponse body
                 let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+                let json = try? JSONSerialization.jsonObject(with: data, options: [])
                 print("response data = \(responseString!)")
 
             }
