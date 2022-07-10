@@ -16,11 +16,7 @@ class ViewController: UIViewController {
         button.backgroundColor = .systemGreen
         button.setTitle("Take picture of receipt", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        let arrPrices = loadJSON(filenname: "data")
-        for x in arrPrices.keys {
-            print(x)
-            print(arrPrices[x]!)
-        }
+        //let arrPrices = parseJSON(filenname: "data")
     }
 
     @IBAction func didTapButton(){
@@ -30,61 +26,46 @@ class ViewController: UIViewController {
         present(picker, animated:true)
     }
     
-    func loadJSON(filenname file: String) -> [String:Double] {
-        guard let path = Bundle.main.path(forResource: file, ofType: "json") else {
-            return [:]
-        }
-        let url = URL(fileURLWithPath: path)
-        var result : Result
-        var toReturn : [String:Double] = [:]
-        do {
-            let jsonData = try Data(contentsOf: url)
-            result = try JSONDecoder().decode(Result.self, from: jsonData)
-            for i in result.receipts {
-                for j in i.items {
-                    toReturn[j.description] = j.amount
-                }
-            }
-            return toReturn
-        }
-        catch {
-            print("error")
-        }
-        return [:]
-    }
-    
-    func parseJSON(jsonPassed jsonObject) -> [String:Double] {
-        var result : Result
-        var toReturn : [String:Double] = [:]
-        do {
-            let jsonData = try Data(jsonPassed)
-            result = try JSONDecoder().decode(Result.self, from: jsonData)
-            for i in result.receipts {
-                for j in i.items {
-                    toReturn[j.description] = j.amount
-                }
-            }
-            return toReturn
-        }
-        catch {
-            print("error")
-        }
-        return [:]
-    }
-
-    
-    struct Result : Codable {
-        var receipts: [Receipt]
-    }
-    
-    struct Receipt: Codable {
-        var items: [Item]
-    }
-    
-    struct Item: Codable {
-        var amount: Double
-        var description: String
-    }
+//    func loadJSON() -> [String:Double] {
+//        guard let path = Bundle.main.path(forResource: file, ofType: "json") else {
+//            return [:]
+//        }
+//        let url = URL(fileURLWithPath: path)
+//        var result : Result
+//        var toReturn : [String:Double] = [:]
+//        do {
+//            let jsonData = try Data(contentsOf: url)
+//            result = try JSONDecoder().decode(Result.self, from: jsonData)
+//            for i in result.receipts {
+//                for j in i.items {
+//                    toReturn[j.description] = j.amount
+//                }
+//            }
+//            return toReturn
+//        }
+//        catch {
+//            print("error")
+//        }
+//        return [:]
+//    }
+//
+//    func parseJSON(jsonObject : jsonPassed) -> [String:Double] {
+//        var result : Result
+//        var toReturn : [String:Double] = [:]
+//        do {
+//            result = try JSONDecoder().decode(Result.self, from: jsonPassed)
+//            for i in result.receipts {
+//                for j in i.items {
+//                    toReturn[j.description] = j.amount
+//                }
+//            }
+//            return toReturn
+//        }
+//        catch {
+//            print("error")
+//        }
+//        return [:]
+//    }
 }
 
 
@@ -103,7 +84,7 @@ extension ViewController: UIImagePickerControllerDelegate,
                     return
             }
             imageView.image = image
-            var imageData = (image).jpegData(compressionQuality: 1)
+            let imageData = (image).jpegData(compressionQuality: 1)
             if imageData == nil{
                 return
             }
@@ -129,14 +110,38 @@ extension ViewController: UIImagePickerControllerDelegate,
                 //print response
                 //print("response = \(response!)")
                 // print reponse body
-                let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-                let jsonObj = try? JSONSerialization.jsonObject(with: data, options: [])
-                let jsonTest = parseJSON(jsonObj)
-                for x in jsonTest.keys {
-                    print(x)
-                    print(jsonTest[x]!)
+                //let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+                //let jsonObj = try? JSONSerialization.jsonObject(with: data!, options: [])
+                var result : Result
+                var toReturn : [String:Double] = [:]
+                do {
+                    result = try JSONDecoder().decode(Result.self, from: data!)
+                    for i in result.receipts {
+                        for j in i.items {
+                            toReturn[j.description] = j.amount
+                        }
+                    }
                 }
-                print("response data = \(responseString!)")
+                catch {
+                    print("error")
+                }
+                for x in toReturn.keys {
+                    print(x)
+                    print(toReturn[x]!)
+                }
+                struct Result : Codable {
+                    var receipts: [Receipt]
+                }
+                
+                struct Receipt: Codable {
+                    var items: [Item]
+                }
+                
+                struct Item: Codable {
+                    var amount: Double
+                    var description: String
+                }
+                //print("response data = \(responseString!)")
 
             }
 
