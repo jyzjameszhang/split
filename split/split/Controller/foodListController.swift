@@ -8,7 +8,16 @@
 import UIKit
 
 class foodListController: UIViewController {
-
+    @IBOutlet weak var foodSwitch: UISwitch!
+    
+    
+    @IBAction func confirmFoods(_ sender: UIButton) {
+        if (foodSwitch.isOn) {
+            
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

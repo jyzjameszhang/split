@@ -11,3 +11,5 @@ let defaults = UserDefaults.standard
 
 var personArr : [Person] = []
 
+var foodArr : [Food] = []
+
