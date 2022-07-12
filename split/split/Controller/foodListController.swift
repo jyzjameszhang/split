@@ -14,7 +14,7 @@ class foodListController: UIViewController {
     
     @IBAction func confirmFoods(_ sender: UIButton) {
         if (foodSwitch.isOn) {
-            
+            print(foodSwitch.tag)
         }
     }
     
