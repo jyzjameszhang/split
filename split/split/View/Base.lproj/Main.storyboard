@@ -70,34 +70,17 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="XRV-oC-T5g"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PwT-t6-ksI">
-                                <rect key="frame" x="34" y="131" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="enterNames:" destination="Rom-71-WO3" eventType="editingDidEnd" id="co4-IR-z1f"/>
-                                    <action selector="enterPeople:" destination="Rom-71-WO3" eventType="editingDidEnd" id="7SQ-z7-1ZI"/>
-                                </connections>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="List of People Eating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHR-QT-5zb">
-                                <rect key="frame" x="56" y="513" width="303" height="277"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5C-a0-OyX">
                                 <rect key="frame" x="306" y="38" width="88" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="NEXT"/>
                                 <connections>
-                                    <segue destination="EIm-EB-4SA" kind="presentation" modalPresentationStyle="fullScreen" id="dUy-vv-hJq"/>
+                                    <segue destination="EIm-EB-4SA" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Ecm-YM-VdQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKd-0n-vpL">
-                                <rect key="frame" x="41" y="508" width="99" height="31"/>
+                                <rect key="frame" x="263" y="132" width="132" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add Person"/>
@@ -120,14 +103,27 @@
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXH-aZ-NK7">
+                                <rect key="frame" x="174" y="600" width="67" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iZC-Fd-NJy">
+                                <rect key="frame" x="48" y="130" width="173" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="593-Lu-RD5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="yCM-Uz-iiL"/>
                     <connections>
+                        <outlet property="boobs" destination="EXH-aZ-NK7" id="KYY-CF-H5u"/>
                         <outlet property="displayNames" destination="6HM-3q-QPy" id="DS4-M8-UJT"/>
-                        <outlet property="enterNames" destination="PwT-t6-ksI" id="Has-KD-eiu"/>
+                        <outlet property="enterNames" destination="iZC-Fd-NJy" id="NPK-XM-soE"/>
                         <outlet property="errorMessage" destination="8JC-wD-sZH" id="fdY-wb-z1M"/>
                     </connections>
                 </viewController>
@@ -135,10 +131,10 @@
             </objects>
             <point key="canvasLocation" x="2642.0289855072465" y="83.705357142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--foodList-->
         <scene sceneID="V1b-7G-O63">
             <objects>
-                <viewController id="EIm-EB-4SA" sceneMemberID="viewController">
+                <viewController title="foodList" id="EIm-EB-4SA" customClass="foodListController" customModule="split" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cng-fk-5EA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -167,6 +163,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Confirm"/>
                                 <connections>
+                                    <action selector="confirmFoods:" destination="EIm-EB-4SA" eventType="touchUpInside" id="TZO-aG-4MI"/>
                                     <segue destination="HC3-dS-Fyf" kind="presentation" modalPresentationStyle="fullScreen" id="wuQ-Z6-AY1"/>
                                 </connections>
                             </button>
@@ -186,11 +183,17 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="BACK"/>
+                                <connections>
+                                    <segue destination="Rom-71-WO3" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="zZZ-I5-Hq7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bMT-oA-2Dj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="foodSwitch" destination="vbv-0z-RAx" id="xde-mW-nqa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IwM-jb-OUT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -221,6 +224,10 @@
             <point key="canvasLocation" x="4211.594202898551" y="83.705357142857139"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ecm-YM-VdQ"/>
+        <segue reference="zZZ-I5-Hq7"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
