@@ -103,12 +103,6 @@
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXH-aZ-NK7">
-                                <rect key="frame" x="174" y="600" width="67" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iZC-Fd-NJy">
                                 <rect key="frame" x="48" y="130" width="173" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -121,7 +115,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="yCM-Uz-iiL"/>
                     <connections>
-                        <outlet property="boobs" destination="EXH-aZ-NK7" id="KYY-CF-H5u"/>
                         <outlet property="displayNames" destination="6HM-3q-QPy" id="DS4-M8-UJT"/>
                         <outlet property="enterNames" destination="iZC-Fd-NJy" id="NPK-XM-soE"/>
                         <outlet property="errorMessage" destination="8JC-wD-sZH" id="fdY-wb-z1M"/>
@@ -147,14 +140,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FOOD + $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2d-Fa-xd6">
-                                <rect key="frame" x="58" y="148" width="76" height="142"/>
+                                <rect key="frame" x="110" y="401" width="76" height="142"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vbv-0z-RAx">
-                                <rect key="frame" x="163" y="204" width="49" height="31"/>
+                                <rect key="frame" x="215" y="457" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NBa-iX-Lfn">
@@ -167,17 +160,6 @@
                                     <segue destination="HC3-dS-Fyf" kind="presentation" modalPresentationStyle="fullScreen" id="wuQ-Z6-AY1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHk-ok-r6h">
-                                <rect key="frame" x="90" y="65" width="235" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <menu key="menu" id="3xT-bS-ZMk">
-                                    <children>
-                                        <command title="Item 1" id="sj8-Nj-uqm"/>
-                                        <command title="Item 2" id="hZN-Hr-2mQ"/>
-                                    </children>
-                                </menu>
-                                <state key="normal" title="Drop Down Names"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ik-T6-IJi">
                                 <rect key="frame" x="36" y="808" width="82" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -187,12 +169,29 @@
                                     <segue destination="Rom-71-WO3" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="zZZ-I5-Hq7"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sPz-aj-xkV">
+                                <rect key="frame" x="87" y="127" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHk-ok-r6h">
+                                <rect key="frame" x="90" y="44" width="235" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <menu key="menu" id="3xT-bS-ZMk">
+                                    <children>
+                                        <command title="Item 1" id="sj8-Nj-uqm"/>
+                                        <command title="Item 2" id="hZN-Hr-2mQ"/>
+                                    </children>
+                                </menu>
+                                <state key="normal" title="Drop Down Names"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bMT-oA-2Dj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
                         <outlet property="foodSwitch" destination="vbv-0z-RAx" id="xde-mW-nqa"/>
+                        <outlet property="foodTable" destination="sPz-aj-xkV" id="4LS-I4-ozo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IwM-jb-OUT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -225,7 +224,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ecm-YM-VdQ"/>
         <segue reference="zZZ-I5-Hq7"/>
     </inferredMetricsTieBreakers>
     <resources>

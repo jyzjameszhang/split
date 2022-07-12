@@ -9,6 +9,7 @@ import UIKit
 
 class foodListController: UIViewController {
     @IBOutlet weak var foodSwitch: UISwitch!
+    @IBOutlet weak var foodTable: UITableView!
     
     
     @IBAction func confirmFoods(_ sender: UIButton) {
