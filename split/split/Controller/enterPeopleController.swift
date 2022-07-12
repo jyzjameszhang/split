@@ -11,7 +11,6 @@ class enterPeopleController: UIViewController {
     @IBOutlet weak var displayNames: UITextView!
     @IBOutlet weak var errorMessage: UILabel!
     @IBOutlet weak var enterNames: UITextField!
-
     
     
     override func viewDidLoad() {
