@@ -10,7 +10,7 @@ import Foundation
 class Food {
     let name : String
     let price : Double
-    var splitCount : Int
+    var splitCount : Double
     
     init (itemName: String, itemPrice: Double) {
         name = itemName
@@ -26,7 +26,7 @@ class Food {
         return name
     }
     
-    func getCount() -> Int {
+    func getCount() -> Double {
         return splitCount
     }
 }
