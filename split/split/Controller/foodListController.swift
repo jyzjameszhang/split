@@ -15,7 +15,7 @@ class foodListController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = foodArr[indexPath.row].name
+        cell.textLabel?.text = foodArr[indexPath.row]
         return cell
     }
     
@@ -27,6 +27,12 @@ class foodListController: UIViewController, UITableViewDelegate, UITableViewData
 
         foodTable.delegate = self
         foodTable.dataSource = self
+        
+        var i = 0
+        for (_, food) in foodDic {
+            foodArr[i] = food.name
+            i += 1
+        }
         
     }
     
