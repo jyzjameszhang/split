@@ -117,6 +117,7 @@ extension ViewController: UIImagePickerControllerDelegate,
                 do {
                     result = try JSONDecoder().decode(Result.self, from: data!)
                     for i in result.receipts {
+                        taxVar = i.tax
                         for j in i.items {
                             var amt:Double = j.amount
                             if let qty = j.qty {
@@ -130,8 +131,8 @@ extension ViewController: UIImagePickerControllerDelegate,
                     print("error")
                 }
                 for x in toReturn.keys {
-                    print(x)
-                    print(toReturn[x]!)
+                    let foodTemp = Food(itemName: x, itemPrice: toReturn[x]!)
+                    foodArr[x] = foodTemp
                 }
                 struct Result : Codable {
                     var receipts: [Receipt]
@@ -139,6 +140,7 @@ extension ViewController: UIImagePickerControllerDelegate,
 
                 struct Receipt: Codable {
                     var items: [Item]
+                    var tax: Double
                 }
 
                 struct Item: Codable {

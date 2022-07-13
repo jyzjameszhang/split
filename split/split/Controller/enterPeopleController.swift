@@ -41,7 +41,7 @@ class enterPeopleController: UIViewController {
             if (errorMessage.text != "") {
                 errorMessage.text = ""
             }
-            personArr.append(Person(personName: enterNames.text!))
+            personArr[enterNames.text!] = Person(personName: enterNames.text!)
             //append to person array with name
             var tempText : String
             tempText = enterNames.text!
