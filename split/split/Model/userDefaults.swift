@@ -11,16 +11,20 @@ import Foundation
 
 let defaults = UserDefaults.standard
 
-var personArr : [String:Person] = [:]
+var personDic : [String:Person] = [:]
 
-var foodArr : [String:Food] = [:]
+var personArr : [Person] = []
+
+var foodDic : [String:Food] = [:]
+
+var foodArr : [String] = []
 
 var taxVar : Double?
 
 func process() {
-    for (tempPersonName, tempPerson) in personArr {
+    for (_, tempPerson) in personDic {
         for tempFood in tempPerson.foodList {
-            tempPerson.pay += ((foodArr[tempFood]!.price)/(foodArr[tempFood]!.splitCount))
+            tempPerson.pay += ((foodDic[tempFood]!.price)/(foodDic[tempFood]!.splitCount))
         }
         print(tempPerson.pay)
     }
