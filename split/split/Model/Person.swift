@@ -9,7 +9,7 @@ import Foundation
 class Person {
     let name : String
     var pay : Double
-    var foodList : [Food]
+    var foodList : [String]
     
     init (personName: String) {
         name = personName
@@ -26,5 +26,4 @@ class Person {
     func getPay() -> Double {
         return pay;
     }
-    
 }
