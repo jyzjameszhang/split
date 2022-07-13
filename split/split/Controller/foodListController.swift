@@ -7,22 +7,33 @@
 
 import UIKit
 
-class foodListController: UIViewController {
-    @IBOutlet weak var foodSwitch: UISwitch!
-    @IBOutlet weak var foodTable: UITableView!
+class foodListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
-    @IBAction func confirmFoods(_ sender: UIButton) {
-        if (foodSwitch.isOn) {
-            
-        }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return foodArr.count
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = foodArr[indexPath.row].name
+        return cell
+    }
+    
+    @IBOutlet weak var foodTable: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        foodTable.delegate = self
+        foodTable.dataSource = self
+        
+    }
+    
+    @IBAction func confirmFoods(_ sender: UIButton) {
+        //if (foodSwitch.isOn) {
+            
+        //}
     }
     
 
