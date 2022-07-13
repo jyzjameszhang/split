@@ -10,18 +10,16 @@ import UIKit
 class foodListController: UIViewController {
     @IBOutlet weak var foodSwitch: UISwitch!
     @IBOutlet weak var foodTable: UITableView!
-    
+    @IBOutlet weak var foodLabel: UILabel!
     
     @IBAction func confirmFoods(_ sender: UIButton) {
         if (foodSwitch.isOn) {
-            
         }
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
