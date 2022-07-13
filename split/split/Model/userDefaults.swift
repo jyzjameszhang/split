@@ -9,7 +9,7 @@ import Foundation
 
 let defaults = UserDefaults.standard
 
-var personArr : [Person] = []
+var personArr : [String:Person] = [:]
 
-var foodArr : [Food] = []
+var foodArr : [String:Food] = [:]
 

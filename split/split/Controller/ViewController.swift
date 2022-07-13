@@ -130,10 +130,9 @@ extension ViewController: UIImagePickerControllerDelegate,
                     print("error")
                 }
                 for x in toReturn.keys {
-                    var foodTemp = Food(itemName: x, itemPrice: toReturn[x]!)
-                    foodArr.append(foodTemp)
+                    let foodTemp = Food(itemName: x, itemPrice: toReturn[x]!)
+                    foodArr[x] = foodTemp
                 }
-                dump(foodArr)
                 struct Result : Codable {
                     var receipts: [Receipt]
                 }
