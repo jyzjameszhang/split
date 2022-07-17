@@ -13,7 +13,7 @@ let defaults = UserDefaults.standard
 
 var personDic : [String:Person] = [:]
 
-var personArr : [Person] = []
+var personArr : [String] = []
 
 var foodDic : [String:Food] = [:]
 

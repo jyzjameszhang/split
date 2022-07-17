@@ -7,15 +7,19 @@
 
 import UIKit
 
-class foodListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class foodListController: UIViewController, UITableViewDelegate, UITableViewDataSource, foodTableCellDelegate {
+    func didTapButton(with title: String) {
+        print ("\(title)")
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return foodArr.count
+        return personArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = foodArr[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: foodTableCell.identifier, for: indexPath) as! foodTableCell
+        cell.configure(with: personArr[indexPath.row])
+        cell.delegate = self
         return cell
     }
     
@@ -24,13 +28,13 @@ class foodListController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        foodTable.register(foodTableCell.nib(), forCellReuseIdentifier: foodTableCell.identifier)
         foodTable.delegate = self
         foodTable.dataSource = self
         
         var i = 0
-        for (_, food) in foodDic {
-            foodArr[i] = food.name
+        for (_, person) in personDic{
+            personArr.append(person.name)
             i += 1
         }
         
