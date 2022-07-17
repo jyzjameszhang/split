@@ -4,7 +4,6 @@
 //
 //  Created on 7/8/22.
 //
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -71,7 +70,7 @@ class ViewController: UIViewController {
 
 
 
-extension ViewController: UIImagePickerControllerDelegate, 
+extension ViewController: UIImagePickerControllerDelegate,
     UINavigationControllerDelegate{
         
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
@@ -105,7 +104,7 @@ extension ViewController: UIImagePickerControllerDelegate,
                 if error != nil {
                     print("error=\(error!)")
                     return
-                }   
+                }
 
                 //print response
                 //print("response = \(response!)")
@@ -117,7 +116,6 @@ extension ViewController: UIImagePickerControllerDelegate,
                 do {
                     result = try JSONDecoder().decode(Result.self, from: data!)
                     for i in result.receipts {
-                        taxVar = i.tax
                         for j in i.items {
                             var amt:Double = j.amount
                             if let qty = j.qty {
@@ -134,13 +132,13 @@ extension ViewController: UIImagePickerControllerDelegate,
                     let foodTemp = Food(itemName: x, itemPrice: toReturn[x]!)
                     foodDic[x] = foodTemp
                 }
+                
                 struct Result : Codable {
                     var receipts: [Receipt]
                 }
 
                 struct Receipt: Codable {
                     var items: [Item]
-                    var tax: Double
                 }
 
                 struct Item: Codable {
@@ -188,4 +186,3 @@ extension NSMutableData {
         append(data!)
     }
 }
-
